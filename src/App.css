@@ -1,38 +1,129 @@
-.App {
+body {
+  margin: 24px;
+  color: #555;
+}
+
+h1 {
+  color: #333;
+}
+
+h2, h3 {
+  margin: 0;
+}
+
+ul {
+  padding-left: 6px;
+}
+
+.nav {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav button {
+  margin: 16px;
+  padding: 3px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #bbb;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.results {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+  display: inline-block;
+  margin: 12px;
+  padding: 0;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px 0 #ddd;
+  width: 100%;
+  max-width: 500px;
+  height: 190px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+  box-shadow: 0 6px 9px 0 #999;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card .owner,
+.card .project,
+.card .commits {
+  margin: 0;
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+}
+
+.card .owner-inner,
+.card .project-inner,
+.card .commits-inner {
+  padding: 12px;
+}
+
+.card .owner {
+  width: 30%;
+}
+
+.card .owner img {
+  margin: 6px;
+  width: 60px;
+}
+
+.card .owner .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: smaller;
+}
+
+.card .owner-inner button {
+  margin: 0;
+  border: none;
+  background: none;
+  color: #555;
+}
+
+
+.card .project,
+.card .commits {
+  background: #f8f8ff;
+  width: 70%;
+  overflow-y: auto;
+}
+
+.card .project .stats {
+  font-size: 12px;
+  color: #aac;
+}
+
+.card .project .stats span {
+  margin: 8px;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #88a;
+}
+
+.card .commits li {
+  list-style-type: none;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card .commits-inner {
+  text-align: left;
+}
+
+.card .commits-inner a {
+  font-weight: normal;
+}
+
+a:hover {
+  color: #66b;
 }
