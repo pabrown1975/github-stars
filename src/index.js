@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './index.css';
 import App from './App';
+import CommitsPage from "./components/commitsPage";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route path="/commits/:owner/:project">
+          <CommitsPage />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

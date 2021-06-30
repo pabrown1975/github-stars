@@ -1,4 +1,5 @@
 export const repoSearchURL = "https://api.github.com/search/repositories";
+export const commitSearchURL = "https://api.github.com/repos";
 export const repoSearchMaxResults = 100;
 export const repoSearchResultsPerPage = 10;
 

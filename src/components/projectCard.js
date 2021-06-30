@@ -1,18 +1,14 @@
-import {useState} from "react";
 import ProjectDescription from "./projectDescription";
-import ProjectCommits from "./projectCommits";
+import {Link} from "react-router-dom";
 
 export default function ProjectCard(props) {
-
-  const [showCommits, setShowCommits] = useState(false);
 
   const {
     name,
     description,
     owner,
     stargazers_count,
-    html_url,
-    commits_url
+    html_url
   } = props.projectInfo;
 
   const {
@@ -26,16 +22,14 @@ export default function ProjectCard(props) {
         <div className="owner-inner">
           <img src={avatar_url} alt={login}/><br/>
           <p className="name">{login}</p>
-          <button onClick={() => setShowCommits(!showCommits)}>
-            commits { showCommits ? <>&#10005;</> : <>&rarr;</> }
-          </button>
         </div>
       </div>
-      {
-        showCommits
-          ? <ProjectCommits commitsURL={commits_url.replace(/{.+}/, "")}/>
-          : <ProjectDescription name={name} description={description} stars={stargazers_count} url={html_url}/>
-      }
+      <ProjectDescription
+        name={name}
+        ownerName={owner.login}
+        description={description}
+        stars={stargazers_count}
+        url={html_url}/>
     </div>
   );
 }
